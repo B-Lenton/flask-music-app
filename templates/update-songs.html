@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+    {% block content %}
+        <h1>Update</h1>
+        {% block title %} Update "{{ song_record['title'] }}" {% endblock %}
+        <section class="container">
+            <form action="" method="post">
+                <input 
+                    type="text" 
+                    name="Title" 
+                    id="title" 
+                    placeholder="Song Title" 
+                    value="{{ request.form[Title] or song_record['Title'] }}" 
+                    class="form-control"
+                >
+                <input 
+                    type="text" 
+                    name="Artist" 
+                    id="artist" 
+                    placeholder="Artist" 
+                    value="{{ request.form[Artist] or song_record['Artist'] }}" 
+                    class="form-control"
+                >
+                <input 
+                    type="text" 
+                    name="Genre" 
+                    id="genre" 
+                    placeholder="Genre" 
+                    value="{{ request.form[Genre] or song_record['Genre'] }}" 
+                    class="form-control"
+                >
+    
+                <button type="submit" class="btn btn-danger" value="Update">Update</button>
+            </form>
+        </section>
+
+
+    {% endblock %}

@@ -2,4 +2,31 @@
 
     {% block content %}
         <h1>Songs</h1>
+        <section class="container-fluid">
+            <table>
+                <thead>
+                    <th class="p-2">SongID</th>
+                    <th class="p-2">Title</th>
+                    <th class="p-2">Artist</th>
+                    <th class="p-2">Genre</th>
+                </thead>
+                <tbody>
+                    {% for row in get_songs %}
+                        <tr class="p-2">
+                            <td class="p-2">{{row["SongID"]}}</td>
+                            <td class="p-2">{{row["Title"]}}</td>
+                            <td class="p-2">{{row["Artist"]}}</td>
+                            <td class="p-2">{{row["Genre"]}}</td>
+                            <td class="p-2">
+                                <button type="submit" class="btn btn-danger">
+                                    <a href="{{ url_for('update', song_id=row['SongID']) }}" class="text-decoration-none text-light">Update</a>
+                                </button>
+                            </td>
+                        </tr>
+    
+    
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
     {% endblock %}
