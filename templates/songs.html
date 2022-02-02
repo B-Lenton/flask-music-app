@@ -2,8 +2,8 @@
 
     {% block content %}
         <h1>Songs</h1>
-        <section class="container-fluid">
-            <table>
+        <section class="container">
+            <table class="mx-auto py-2">
                 <thead>
                     <th class="p-2">SongID</th>
                     <th class="p-2">Title</th>
@@ -12,7 +12,7 @@
                 </thead>
                 <tbody>
                     {% for row in get_songs %}
-                        <tr class="p-2">
+                        <tr class="p-2 border-bottom border-bottom-2 border-danger">
                             <td class="p-2">{{row["SongID"]}}</td>
                             <td class="p-2">{{row["Title"]}}</td>
                             <td class="p-2">{{row["Artist"]}}</td>
